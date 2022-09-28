@@ -16,10 +16,11 @@ public class CameraLook : MonoBehaviour
     float _rotationX;
 
 
-    private void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-    }
+    
+
+    
+
+
 
     void Update()
     {

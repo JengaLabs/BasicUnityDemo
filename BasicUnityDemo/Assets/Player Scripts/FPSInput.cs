@@ -24,6 +24,12 @@ public class FPSInput : MonoBehaviour
     private void Update()
     {
 
+        Movement();
+
+    }
+
+    private void Movement()
+    {
         //get x mouse value
         transform.Rotate(0, Input.GetAxis("Mouse X") * mouseSense * Time.deltaTime, 0);
 
@@ -50,7 +56,6 @@ public class FPSInput : MonoBehaviour
 
         //Tells the character controller to move 
         _charController.Move(movement);
-
     }
 
 
