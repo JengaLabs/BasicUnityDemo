@@ -16,8 +16,11 @@ public class SPlayerJUMP : PlayerState
 
     public override void Enter()
     {
-        //Apply jump force 
 
+        Debug.Log("entering jump state");
+
+        //Apply jump force 
+        playerProperties.Jump();
 
         base.Enter();
     }
@@ -25,21 +28,24 @@ public class SPlayerJUMP : PlayerState
     
     public override void Update()
     {
+        //set player grounded false 
+        playerProperties.grounded = false;
+
+        //move player to in air state 
+        nextState = new SPlayerAIR(playerObject, playerProperties);
+        stage = EVENT.EXIT;
 
 
-        //Continue to allow air movment
-        
-
-        //Check for player touching ground
-
-
-        base.Update();
     }
 
     public override void Exit()
     {
         base.Exit();
     }
+
+
+
+    
 
 
 }

@@ -6,14 +6,14 @@ using UnityEngine;
 public class PlayerState : State 
 {
 
-
+    public GameObject playerObject;
     public PlayerProperties playerProperties;
 
     public PlayerState(GameObject _playerObject, PlayerProperties _playerProperties)
         : base(_playerObject)
     {
         playerProperties = _playerProperties;
-
+        playerObject = _playerObject;
 
     }
 
@@ -32,12 +32,7 @@ public class PlayerState : State
         base.Update();
     }
 
-    //Methods player states will need access too. 
-    public bool IsFloor(Vector3 v)
-    {
-        float angle = Vector3.Angle(Vector3.up, v);
-        return angle < playerProperties.maxSlopeAngle;
-    }
+    
 
 
 }
