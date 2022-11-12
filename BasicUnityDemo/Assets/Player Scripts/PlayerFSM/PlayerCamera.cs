@@ -14,5 +14,6 @@ public class PlayerCamera : MonoBehaviour
     void Update()
     {
         //transform.position = player.transform.position;
+        //no 
     }
 }
